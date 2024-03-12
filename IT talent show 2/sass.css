@@ -19,6 +19,14 @@ header {
   align-items: center;
 }
 
+@media only screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+  #logo-container {
+    flex-direction: column;
+  }
+}
 #logo-container {
   display: flex;
 }
@@ -51,6 +59,27 @@ header {
   text-decoration: none;
   color: black;
   font-size: 1.5rem;
+}
+
+#change-mode {
+  background-color: hsl(0, 3%, 100%);
+  width: 4vw;
+  border-radius: 1rem;
+  padding: 0.2rem;
+  position: absolute;
+  left: 93.8vw;
+  top: 2vh;
+  cursor: pointer;
+}
+
+#change-mode-dot {
+  background-color: hsl(0, 3%, 30%);
+  border-radius: 1rem;
+  width: 0.1vw;
+  padding: 0.8rem;
+}
+#change-mode-dot:hover {
+  width: -1vw;
 }
 
 #section-slides {
