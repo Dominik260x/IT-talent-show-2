@@ -105,7 +105,7 @@ header {
 }
 
 .slide {
-  background: hsl(0, 1%, 50%);
+  background-color: hsl(0, 1%, 50%);
   width: 80vw;
   height: 70vh;
   border-radius: 1.5rem;
