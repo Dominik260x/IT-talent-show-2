@@ -1,3 +1,12 @@
+$header-background-color: hsl(100, 100%, 50%)
+$bookmark-element-border-right-color: black
+$bookmark-element-a-color: black
+$change-mode-background-color: hsl(0, 3%, 100%)
+$change-mode-dot-background-color: hsl(0, 3%, 30%)
+$section-slides-background-color: hsl(200, 100%, 65%)
+$slide-background-color: hsl(0, 1%, 50%)
+$section-main-background-color: hsl(280, 100%, 65%)
+$footer-background-color: hsl(25, 100%, 65%)
 
 *
     font-family: "Lato", sans-serif
@@ -13,7 +22,7 @@ header
     display: flex
     justify-content: space-between
     text-align: center
-    background-color: hsl(100, 100%, 50%)
+    background-color: $header-background-color
     flex-direction: row
     align-items: center
 
@@ -39,10 +48,10 @@ header
 .bookmarks-elements
     padding: 2vw
     list-style-type: none
-    border-right: 2px solid black
+    border-right: 2px solid $bookmark-element-border-right-color
     & a
         text-decoration: none
-        color: black
+        color: $bookmark-element-a-color
         font-size: 1.5rem
 
 .bookmarks-elements-end
@@ -50,11 +59,11 @@ header
     list-style-type: none
     & a
         text-decoration: none
-        color: black
+        color: $bookmark-element-a-color
         font-size: 1.5rem
 
 #change-mode
-    background-color: hsl(0, 3%, 100%)
+    background-color: $change-mode-background-color
     width: 4vw
     border-radius: 1rem
     padding: 0.2rem
@@ -63,7 +72,7 @@ header
     top: 2vh
     cursor: pointer
 #change-mode-dot
-    background-color: hsl(0, 3%, 30%)
+    background-color: $change-mode-dot-background-color
     border-radius: 1rem
     width: 0.1vw
     padding: 0.8rem
@@ -74,7 +83,7 @@ header
     display: flex
     justify-content: center
     text-align: center
-    background-color: hsl(200, 100%, 65%)
+    background-color: $section-slides-background-color
 
 #slides
 
@@ -89,7 +98,7 @@ header
 #slides-container
     padding-top: 1.5rem
 .slide
-    background: hsl(0, 1%, 50%)
+    background-color: $slide-background-color
     width: 80vw
     height: 70vh
     border-radius: 1.5rem
@@ -120,7 +129,7 @@ header
 #section-main
     display: flex
     text-align: center
-    background-color: hsl(280, 100%, 65%)
+    background-color: $section-main-background-color
     flex-wrap: wrap
     align-items: center
     justify-content: space-around
@@ -142,7 +151,7 @@ header
     display: flex
     height: 20vh
     text-align: center
-    background-color: hsl(25, 100%, 65%)
+    background-color: $footer-background-color
     justify-content: space-around
     align-items: center
 
