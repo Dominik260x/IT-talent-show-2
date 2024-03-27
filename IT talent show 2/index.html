@@ -3,58 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <nav>
       <link rel="stylesheet" href="sass.css">
       <link rel="stylesheet" href="sass.sass">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2? family=Lato&display=swap" rel="arkusz stylów">
-    </nav>
     <title>Profil Informatyczny w Staszicu</title>
   </head>
 
 <body>
   <main>
-
-    <header>
-
-        <div id="logo-container">
-            <img id="logo" src="images/logo2.webp" alt="Logo szkoły im.Stanisława Staszic w Nakle nad Notecią">
-
-            <h1 class="title">
-              Profil <br> Informatyczny
-            </h1>
-        </div>
-
-        <div id="container-bookmarks">
-          <ul id="bookmarks">
-            <li class="bookmarks-elements">
-              <a href="#">O Szkole</a>
-            </li>
-
-            <li class="bookmarks-elements">
-              <a href="#">O Profilu</a>
-            </li>
-
-            <li class="bookmarks-elements">
-              <a href="#">Nauczycie</a>
-            </li>
-
-            <li class="bookmarks-elements-end">
-              <a href="#">Sale</a>
-            </li>
-          </ul>
-        </div>
-
-        <div id="change-mode">
-          <div id="change-mode-dot">
-          </div>
-        </div>
-        <div style="clear:both"></div>          
-    </header>
-
-    <section id="section-slides">
-      <div id="slides">
+    <nav>
+          <img id="logo" src="images/logo.png" alt="Logo szkoły im.Stanisława Staszic w Nakle nad Notecią">
+            <ul id="bookmarks">
+              <li>
+                <a class="bookmarks-element" href="#">O Szkole</a>
+              </li>
+              <li>
+                <a class="bookmarks-element" href="#">O Profilu</a>
+              </li>
+              <li>
+                <a class="bookmarks-element" href="#">Nauczycie</a>
+              </li>
+              <li>
+                <a class="bookmarks-element" href="#">Sale</a>
+              </li>
+            </ul>
+          <button id="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </button>  
+        </nav>
+        
+    <header id="section-slides">
+      <div>
         <div id="top-row">
             <img class="arrow" id="arrow-left" src="images/left-arrow.png" alt="strzałka w lewo">
           <div id="slides-container">
@@ -70,6 +53,7 @@
           </div>
             <img class="arrow" id="arrow-right" src="images/right-arrow.png" alt="strzałka w prawo">
         </div>
+
         <div id="bottom-row">
           <div id="dots">
             <div class="dot"><img src="images/dot.png" alt="Kropka"></div>
@@ -78,18 +62,15 @@
           </div>
         </div>
       </div>
-    </section>
+    </header>
 
-    <section id="section-main">
+    <section>
         <div id="heading">
           <h1>O Szkole</h1>
         </div>
-
         <div id="video-container">
           <iframe id="video" src="https://www.youtube.com/embed/xe2NAof7mEc?si=PEXLxnPfbyyo0Qt5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        
-        
         <article>
             <div id="description"> 
                     <h2>
@@ -103,11 +84,9 @@
                     </h2>
             </div>
         </article>
-
     </section>
-
     <footer>
-      <div id="footer">
+      <div id="footer-container">
           <a href="#">
             <div class="icon" id="Facebook"><img src="images/facebook.png" alt="Ikona Facebooka"></div>
           </a>
@@ -123,6 +102,7 @@
               <div style="clear:both"></div> 
         </div>
       </footer>
+      <script src="burger.js"></script>
     </main>
   </body>
 </html>                                                                           
