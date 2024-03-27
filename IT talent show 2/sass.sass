@@ -46,7 +46,6 @@ nav
         position: relative
         padding: 1em
         color: $bookmark-element-a-color
-
     #burger
         background: transparent
         border: none
@@ -59,7 +58,7 @@ nav
         background-color: $border-bottom
         margin: 0.5rem
         border-radius: 20px
-        transition: 3s ease-in-out
+        transition: 1s ease-in-out
     @media screen and ( max-width: 1000px)
         #burger
             display: block
@@ -114,15 +113,12 @@ header
     text-align: center
     background-color: $section-slides-background-color
     border-bottom: 0.15rem solid $border-bottom
-
     #top-row
         display: flex
         align-items: center
         position: relative
-
     #slides-container
         padding-top: 1.5rem
-
     .slide
         background-color: $slide-background-color
         width: 80vw
@@ -133,7 +129,6 @@ header
         align-items: center
         justify-content: space-around
         font-size: 3rem
-
     #slides1
         position: absolute
         display: block
@@ -147,14 +142,21 @@ header
         height: 8rem
         padding: 1.5rem
     #arrow-right
-
     #bottom-row
-
     #dots
         display: flex
         justify-content: center
     .dot
         font-size: 3rem
+
+    @media screen and ( max-width: 600px)
+        .slide
+            width: 75vw
+            aspect-ratio: 9/16
+        .arrow
+            width: 5rem
+            height: 6rem
+            padding: 1rem
 
 section
     display: flex
