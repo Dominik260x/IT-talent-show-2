@@ -27,7 +27,7 @@ nav {
   padding: 0.5rem;
   position: relative;
 }
-nav #bookmarks {
+nav ul {
   list-style-type: none;
   display: flex;
   justify-content: space-around;
@@ -166,11 +166,11 @@ header .dot {
 }
 @media screen and (max-width: 600px) {
   header .slide {
-    width: 75vw;
+    width: 70vw;
     aspect-ratio: 9/16;
   }
   header .arrow {
-    width: 5rem;
+    width: 4rem;
     height: 6rem;
     padding: 1rem;
   }
