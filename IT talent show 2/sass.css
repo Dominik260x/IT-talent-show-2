@@ -70,7 +70,7 @@ nav .line {
     transform: rotate(-320deg) translateY(-10px);
   }
   nav ul {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 22.5vh;
     background-color: yellow;
