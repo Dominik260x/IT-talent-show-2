@@ -117,7 +117,7 @@ header
     #top-row
         display: flex
         align-items: center
-        position: relative
+        position: static
     #slides-container
         padding-top: 1.5rem
     .slide
@@ -131,13 +131,13 @@ header
         justify-content: space-around
         font-size: 3rem
     #slides1
-        position: absolute
+        position: static
         display: block
     #slides2
-        position: absolute
-        display: block
+        position: static
+        display: none
     #slides3
-        display: block
+        display: none
     .arrow
         width: 8rem
         height: 8rem
@@ -148,6 +148,7 @@ header
         display: flex
         justify-content: center
     .dot
+        cursor: pointer
         font-size: 3rem
 
     @media screen and ( max-width: 600px)
