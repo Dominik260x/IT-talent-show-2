@@ -126,7 +126,7 @@ header {
 header #top-row {
   display: flex;
   align-items: center;
-  position: relative;
+  position: static;
 }
 header #slides-container {
   padding-top: 1.5rem;
@@ -143,15 +143,15 @@ header .slide {
   font-size: 3rem;
 }
 header #slides1 {
-  position: absolute;
+  position: static;
   display: block;
 }
 header #slides2 {
-  position: absolute;
-  display: block;
+  position: static;
+  display: none;
 }
 header #slides3 {
-  display: block;
+  display: none;
 }
 header .arrow {
   width: 8rem;
@@ -163,6 +163,7 @@ header #dots {
   justify-content: center;
 }
 header .dot {
+  cursor: pointer;
   font-size: 3rem;
 }
 @media screen and (max-width: 600px) {
