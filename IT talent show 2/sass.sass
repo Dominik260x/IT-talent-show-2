@@ -1,13 +1,16 @@
-$border-bottom: hsl(0, 100%, 1%)
-$header-background-color: hsl(100, 100%, 50%)
-$bookmark-element-border-right-color: hsl(0, 100%, 1%)
+$nav-background-color: hsl(100, 100%, 50%)
 $bookmark-element-a-color: hsl(0, 100%, 1%)
 $change-mode-background-color: hsl(0, 3%, 100%)
+$line-background-color: hsl(0, 100%, 1%)
+$burger-ul-background-color: hsl(60, 100%, 60%)
+$burger-a-color: hsl(0, 100%, 0%)
 $change-mode-dot-background-color: hsl(0, 3%, 30%)
-$section-slides-background-color: hsl(200, 100%, 65%)
-$slide-background-color: hsl(0, 1%, 50%)
-$section-main-background-color: hsl(280, 100%, 65%)
+$header-background-color: hsl(200, 100%, 65%)
+$header-slide-background-color: hsl(0, 1%, 50%)
+$header-arrow-color: hsl(0, 100%, 1%)
+$section-background-color: hsl(280, 100%, 65%)
 $footer-background-color: hsl(25, 100%, 65%)
+$border-bottom: hsl(0, 100%, 1%)
 
 /*Global Settings
 
@@ -29,7 +32,7 @@ body
     overflow: hidden
 
 nav
-    background-color: $header-background-color
+    background-color: $nav-background-color
     display: flex
     justify-content: space-between
     align-items: center
@@ -56,7 +59,7 @@ nav
     .line
         width: 4em
         height: 0.5rem
-        background-color: $border-bottom
+        background-color: $line-background-color
         margin: 0.5rem
         border-radius: 20px
         transition: 1s ease-in-out
@@ -74,16 +77,17 @@ nav
             position: fixed
             right: 0
             top: 22.5vh
-            background-color: yellow
+            background-color: $burger-ul-background-color
             height: 77.5vh
             flex-direction: column
             text-align: center
             transform: translate(100%)
             transition: 1s ease-in-out
+            z-index: 1
         ul.active
             transform: translate(0%)
         a
-            color: black
+            color: $burger-a-color
             font-size: 1.5rem
             letter-spacing: 2px
         @media screen and ( max-width: 760px)
@@ -109,62 +113,48 @@ change-mode
             width: -1vw
 
 header
-    display: flex
-    justify-content: center
-    text-align: center
-    background-color: $section-slides-background-color
+    background-color: $header-background-color
     border-bottom: 0.15rem solid $border-bottom
-    #top-row
+    & #slider
+        position: relative
         display: flex
         align-items: center
-        position: static
-    #slides-container
-        padding-top: 1.5rem
-    .slide
-        background-color: $slide-background-color
+        justify-content: space-around
+        width: 100%
+        margin: auto
+        overflow: hidden
+    & .arrow
+        color: $header-arrow-color
+        cursor: pointer
+        width: 5rem
+        height: 5rem
+    & .slide-container
+        display: none
+        &.displaySlide
+            display: block
+    & .slide
+        background-color: $header-slide-background-color
         width: 80vw
         height: 70vh
         border-radius: 1.5rem
         aspect-ratio: 16/9
         display: flex
-        align-items: center
-        justify-content: space-around
-        font-size: 3rem
-    #slides1
-        position: static
-        display: block
-    #slides2
-        position: static
-        display: none
-    #slides3
-        position: static
-        display: none
-    .arrow
-        width: 8rem
-        height: 8rem
-        padding: 1.5rem
-    #arrow-right
-    #bottom-row
-    #dots
-        display: flex
         justify-content: center
-    .dot
-        cursor: pointer
+        align-items: center
         font-size: 3rem
-
+        margin: 2.3rem 0rem 2.3rem 0rem
     @media screen and ( max-width: 600px)
         .slide
-            width: 70vw
+            width: 16rem
             aspect-ratio: 9/16
         .arrow
             width: 4rem
             height: 6rem
-            padding: 1rem
 
 section
     display: flex
     text-align: center
-    background-color: $section-main-background-color
+    background-color: $section-background-color
     flex-wrap: wrap
     align-items: center
     justify-content: space-around
