@@ -43,35 +43,25 @@
         </button>
       </nav>
 
-      <header id="section-slides">
-        <div>
-          <div id="top-row">
-            <img
-              class="arrow"
-              id="arrow-left"
-              src="images/left-arrow.png"
-              alt="strzałka w lewo"
-            />
-            <div id="slides-container">
-              <div class="slide" id="slides1">slides1</div>
-              <div class="slide" id="slides2">slides2</div>
-              <div class="slide" id="slides3">slides3</div>
-            </div>
-            <img
-              class="arrow"
-              id="arrow-right"
-              src="images/right-arrow.png"
-              alt="strzałka w prawo"
-            />
+      <header>
+        <div id="slider">
+          <img
+            class="arrow"
+            onclick="prevSlide()"
+            src="images/left-arrow.png"
+            alt="left arrow"
+          />
+          <div id="slides">
+            <div class="slide-container"><div class="slide">slide1</div></div>
+            <div class="slide-container"><div class="slide">slide2</div></div>
+            <div class="slide-container"><div class="slide">slide3</div></div>
           </div>
-
-          <div id="bottom-row">
-            <div id="dots">
-              <div class="dot"><img src="images/dot.png" alt="Kropka" /></div>
-              <div class="dot"><img src="images/dot.png" alt="Kropka" /></div>
-              <div class="dot"><img src="images/dot.png" alt="Kropka" /></div>
-            </div>
-          </div>
+          <img
+            class="arrow"
+            onclick="nextSlide()"
+            src="images/right-arrow.png"
+            alt="right arrow"
+          />
         </div>
       </header>
 
@@ -82,10 +72,11 @@
         <div id="video-container">
           <iframe
             id="video"
-            src="https://www.youtube.com/embed/xe2NAof7mEc?si=PEXLxnPfbyyo0Qt5"
+            src="https://www.youtube.com/embed/xe2NAof7mEc?si=lu6kQWExmv-Q9led"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
         </div>
@@ -129,6 +120,7 @@
         </div>
       </footer>
       <script src="burger.js"></script>
+      <script src="slider.js"></script>
     </main>
   </body>
 </html>
