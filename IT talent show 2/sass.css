@@ -74,18 +74,19 @@ nav .line {
     position: fixed;
     right: 0;
     top: 22.5vh;
-    background-color: yellow;
+    background-color: hsl(60, 100%, 60%);
     height: 77.5vh;
     flex-direction: column;
     text-align: center;
     transform: translate(100%);
     transition: 1s ease-in-out;
+    z-index: 1;
   }
   nav ul.active {
     transform: translate(0%);
   }
   nav a {
-    color: black;
+    color: hsl(0, 100%, 0%);
     font-size: 1.5rem;
     letter-spacing: 2px;
   }
@@ -117,19 +118,29 @@ change-mode #change-mode-dot:hover {
 }
 
 header {
-  display: flex;
-  justify-content: center;
-  text-align: center;
   background-color: hsl(200, 100%, 65%);
   border-bottom: 0.15rem solid hsl(0, 100%, 1%);
 }
-header #top-row {
+header #slider {
+  position: relative;
   display: flex;
   align-items: center;
-  position: static;
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
 }
-header #slides-container {
-  padding-top: 1.5rem;
+header .arrow {
+  color: hsl(0, 100%, 1%);
+  cursor: pointer;
+  width: 5rem;
+  height: 5rem;
+}
+header .slide-container {
+  display: none;
+}
+header .slide-container.displaySlide {
+  display: block;
 }
 header .slide {
   background-color: hsl(0, 1%, 50%);
@@ -138,43 +149,19 @@ header .slide {
   border-radius: 1.5rem;
   aspect-ratio: 16/9;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 3rem;
-}
-header #slides1 {
-  position: static;
-  display: block;
-}
-header #slides2 {
-  position: static;
-  display: none;
-}
-header #slides3 {
-  display: none;
-}
-header .arrow {
-  width: 8rem;
-  height: 8rem;
-  padding: 1.5rem;
-}
-header #dots {
-  display: flex;
   justify-content: center;
-}
-header .dot {
-  cursor: pointer;
+  align-items: center;
   font-size: 3rem;
+  margin: 2.3rem 0rem 2.3rem 0rem;
 }
 @media screen and (max-width: 600px) {
   header .slide {
-    width: 70vw;
+    width: 16rem;
     aspect-ratio: 9/16;
   }
   header .arrow {
     width: 4rem;
     height: 6rem;
-    padding: 1rem;
   }
 }
 
