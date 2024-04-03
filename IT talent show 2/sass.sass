@@ -1,6 +1,6 @@
 $light-nav-background-color: hsl(212.1, 100%, 13.9%)
-$light-bookmark-element-a-color: hsl(0, 0%, 100%)
-$light-line-background-color: hsl(0, 100%, 2%)
+$light-nav-bookmark-element-a-color: hsl(0, 0%, 100%)
+$light-nav-line-background-color: hsl(0, 100%, 100%)
 $light-nav-burger-ul-background-color: hsl(60, 0%, 100%)
 $light-nav-burger-a-color: hsl(0, 100%, 0%)
 $light-header-background-color: hsl(0, 0%, 100%)
@@ -9,12 +9,16 @@ $light-header-arrow-color: hsl(0, 100%, 1%)
 $light-section-background-color: hsl(0, 0%, 100%)
 $light-footer-background-color: hsl(212.1, 100%, 13.9%)
 $light-border-bottom: hsl(0, 100%, 1%)
-$change-mode-background-color: hsl(0, 0%, 100%)
-$change-mode-dot-background-color: hsl(0, 3%, 30%)
+
+$light-change-mode-background-color: hsl(0, 0%, 100%)
+$light-change-mode-dot-background-color: hsl(0, 3%, 30%)
+$dark-change-mode-background-color: hsl(0, 0%, 15%)
+$dark-change-mode-dot-background-color: hsl(0, 3%, 70%)
+
 $dark-nav-background-color: hsl(212.1, 100%, 13.9%)
 $dark-bookmark-element-a-color: hsl(0, 0%, 5%)
 $dark-change-mode-background-color: hsl(0, 0%, 5%)
-$dark-line-background-color: hsl(0, 100%, 2%)
+$dark-line-background-color: hsl(0, 0%, 80%)
 $dark-nav-burger-ul-background-color: hsl(60, 0%, 5%)
 $dark-nav-burger-a-color: hsl(0, 0%, 100%)
 $dark-change-mode-dot-background-color: hsl(0, 3%, 30%)
@@ -44,13 +48,22 @@ body
     overflow: hidden
 
 nav
-    background-color: $light-nav-background-color
-    display: flex
-    justify-content: space-between
-    align-items: center
-    border-bottom: 0.15rem solid $light-border-bottom
-    padding: 0.5rem
-    position: relative
+    &.light
+        background-color: $light-nav-background-color
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border-bottom: 0.15rem solid $light-border-bottom
+        padding: 0.5rem
+        position: relative
+    &.dark
+        background-color: $dark-nav-background-color
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border-bottom: 0.15rem solid $dark-border-bottom
+        padding: 0.5rem
+        position: relative
     & ul
         list-style-type: none
         display: flex
@@ -61,7 +74,7 @@ nav
         font-weight: bold
         position: relative
         padding: 1em
-        color: $light-bookmark-element-a-color
+        color: $light-nav-bookmark-element-a-color
     #burger
         background: transparent
         border: none
@@ -71,7 +84,7 @@ nav
     .line
         width: 4em
         height: 0.5rem
-        background-color: $light-line-background-color
+        background-color: $light-nav-line-background-color
         margin: 0.5rem
         border-radius: 20px
         transition: 1s ease-in-out
@@ -105,27 +118,30 @@ nav
         @media screen and ( max-width: 760px)
             ul
                 width: 100%
-
-change-mode
-    #change-mode
-        background-color: $change-mode-background-color
-        width: 4vw
-        border-radius: 1rem
-        padding: 0.2rem
+    & #change-mode
+        width: 3rem
+        height: 2rem
+        background-color: $light-change-mode-background-color
         position: absolute
-        left: 93.8vw
-        top: 2vh
+        outline-width: 5px
         cursor: pointer
-    #change-mode-dot
-        background-color: $change-mode-dot-background-color
-        border-radius: 1rem
-        width: 0.1vw
-        padding: 0.8rem
-        &:hover
-            width: -1vw
-
+        border-radius: 50px
+        left: 95vw
+        top: 2vh
+    & #change-mode-dot
+        display: block
+        width: 1.3rem
+        height: 1.3rem
+        margin: 0.1rem 0.1rem
+        position: relative
+        background-color: $light-change-mode-dot-background-color
+        border-radius: 100%
+        transition: background-color 0.3s, transform 0.3s
 header
-    background-color: $light-header-background-color
+    &.light
+        background-color: $light-header-background-color
+    &.dark
+        background-color: $dark-header-background-color
     & #slider
         position: relative
         display: flex
@@ -163,15 +179,25 @@ header
             height: 6rem
 
 section
-    display: flex
-    text-align: center
-    background-color: $light-section-background-color
-    flex-wrap: wrap
-    align-items: center
-    justify-content: space-around
-    flex-direction: column
-    border-bottom: 0.15rem solid $light-border-bottom
-
+    &.light
+        display: flex
+        text-align: center
+        background-color: $light-section-background-color
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-around
+        flex-direction: column
+        border-bottom: 0.15rem solid $light-border-bottom
+    &.dark
+        display: flex
+        text-align: center
+        background-color: $dark-section-background-color
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-around
+        flex-direction: column
+        border-bottom: 0.15rem solid $dark-border-bottom
+    & h1
     #heading
         font-size: 1.8rem
         padding: rem 0
@@ -187,14 +213,21 @@ section
         width: 85vw
 
 footer
-    #footer-container
+    &.light #footer-container
         display: flex
         height: 20vh
         text-align: center
         background-color: $light-footer-background-color
         justify-content: space-around
         align-items: center
-
+    &.dark #footer-container
+        display: flex
+        height: 20vh
+        text-align: center
+        background-color: $dark-footer-background-color
+        justify-content: space-around
+        align-items: center
+    & #footer-container
     .icon
         margin-left: auto
         margin-right: auto
