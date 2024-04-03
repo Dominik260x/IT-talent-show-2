@@ -19,12 +19,21 @@ body {
   overflow: hidden;
 }
 
-nav {
+nav.light {
   background-color: hsl(212.1, 100%, 13.9%);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 0.15rem solid hsl(0, 100%, 1%);
+  padding: 0.5rem;
+  position: relative;
+}
+nav.dark {
+  background-color: hsl(212.1, 100%, 13.9%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.15rem solid hsl(0, 0%, 100%);
   padding: 0.5rem;
   position: relative;
 }
@@ -51,7 +60,7 @@ nav #burger {
 nav .line {
   width: 4em;
   height: 0.5rem;
-  background-color: hsl(0, 100%, 2%);
+  background-color: hsl(0, 100%, 100%);
   margin: 0.5rem;
   border-radius: 20px;
   transition: 1s ease-in-out;
@@ -96,29 +105,33 @@ nav .line {
     width: 100%;
   }
 }
-
-change-mode #change-mode {
+nav #change-mode {
+  width: 3rem;
+  height: 2rem;
   background-color: hsl(0, 0%, 100%);
-  width: 4vw;
-  border-radius: 1rem;
-  padding: 0.2rem;
   position: absolute;
-  left: 93.8vw;
-  top: 2vh;
+  outline-width: 5px;
   cursor: pointer;
+  border-radius: 50px;
+  left: 95vw;
+  top: 2vh;
 }
-change-mode #change-mode-dot {
+nav #change-mode-dot {
+  display: block;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin: 0.1rem 0.1rem;
+  position: relative;
   background-color: hsl(0, 3%, 30%);
-  border-radius: 1rem;
-  width: 0.1vw;
-  padding: 0.8rem;
-}
-change-mode #change-mode-dot:hover {
-  width: -1vw;
+  border-radius: 100%;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-header {
+header.light {
   background-color: hsl(0, 0%, 100%);
+}
+header.dark {
+  background-color: hsl(0, 0%, 5%);
 }
 header #slider {
   position: relative;
@@ -164,7 +177,7 @@ header .slide {
   }
 }
 
-section {
+section.light {
   display: flex;
   text-align: center;
   background-color: hsl(0, 0%, 100%);
@@ -173,6 +186,16 @@ section {
   justify-content: space-around;
   flex-direction: column;
   border-bottom: 0.15rem solid hsl(0, 100%, 1%);
+}
+section.dark {
+  display: flex;
+  text-align: center;
+  background-color: hsl(0, 0%, 5%);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  border-bottom: 0.15rem solid hsl(0, 0%, 100%);
 }
 section #heading {
   font-size: 1.8rem;
@@ -188,7 +211,7 @@ section #description {
   width: 85vw;
 }
 
-footer #footer-container {
+footer.light #footer-container {
   display: flex;
   height: 20vh;
   text-align: center;
