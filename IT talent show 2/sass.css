@@ -19,28 +19,25 @@ body {
   overflow: hidden;
 }
 
-nav.light {
-  background-color: hsl(212.1, 100%, 13.9%);
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 0.15rem solid hsl(0, 100%, 1%);
   padding: 0.5rem;
   position: relative;
 }
+nav.light {
+  background-color: hsl(212.1, 100%, 13.9%);
+  border-bottom: 0.15rem solid hsl(0, 100%, 1%);
+}
 nav.dark {
   background-color: hsl(212.1, 100%, 13.9%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-bottom: 0.15rem solid hsl(0, 0%, 100%);
-  padding: 0.5rem;
-  position: relative;
 }
 nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 nav a {
   text-decoration: none;
@@ -48,67 +45,16 @@ nav a {
   font-weight: bold;
   position: relative;
   padding: 1em;
+}
+nav a.light {
   color: hsl(0, 0%, 100%);
 }
-nav #burger {
-  background: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  display: none;
-}
-nav .line {
-  width: 4em;
-  height: 0.5rem;
-  background-color: hsl(0, 100%, 100%);
-  margin: 0.5rem;
-  border-radius: 20px;
-  transition: 1s ease-in-out;
-}
-@media screen and (max-width: 1000px) {
-  nav #burger {
-    display: block;
-    transition: 1s ease-in-in;
-  }
-  nav #burger.active .line:first-child {
-    transform: translateY(-300px);
-  }
-  nav #burger.active .line:nth-child(2) {
-    transform: rotate(320deg) translateY(10px);
-  }
-  nav #burger.active .line:nth-child(3) {
-    transform: rotate(-320deg) translateY(-10px);
-  }
-  nav ul {
-    position: fixed;
-    right: 0;
-    top: 22.5vh;
-    background-color: hsl(60, 0%, 100%);
-    height: 77.5vh;
-    flex-direction: column;
-    text-align: center;
-    transform: translate(100%);
-    transition: 1s ease-in-out;
-    z-index: 1;
-  }
-  nav ul.active {
-    transform: translate(0%);
-  }
-  nav a {
-    color: hsl(0, 100%, 0%);
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-  }
-}
-@media screen and (max-width: 1000px) and (max-width: 760px) {
-  nav ul {
-    width: 100%;
-  }
+nav a.dark {
+  color: hsl(0, 0%, 100%);
 }
 nav #change-mode {
   width: 3rem;
   height: 2rem;
-  background-color: hsl(0, 0%, 100%);
   position: absolute;
   outline-width: 5px;
   cursor: pointer;
@@ -116,15 +62,111 @@ nav #change-mode {
   left: 95vw;
   top: 2vh;
 }
+nav #change-mode.light {
+  background-color: hsl(0, 0%, 100%);
+}
+nav #change-mode.dark {
+  background-color: hsl(0, 0%, 15%);
+}
 nav #change-mode-dot {
   display: block;
   width: 1.3rem;
   height: 1.3rem;
   margin: 0.1rem 0.1rem;
   position: relative;
-  background-color: hsl(0, 3%, 30%);
   border-radius: 100%;
   transition: background-color 0.3s, transform 0.3s;
+}
+nav #change-mode-dot.light {
+  background-color: hsl(0, 3%, 30%);
+  left: 0.1rem;
+}
+nav #change-mode-dot.dark {
+  background-color: hsl(0, 3%, 30%);
+  transform: translateX(1.15rem);
+}
+nav #burger {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: none;
+  z-index: 1;
+}
+nav .line {
+  width: 4em;
+  height: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 20px;
+  transition: 1s ease-in-out;
+  position: relative;
+}
+nav .line.light {
+  background-color: hsl(0, 100%, 100%);
+}
+nav .line.dark {
+  background-color: hsl(0, 0%, 80%);
+}
+@media screen and (max-width: 1000px) {
+  nav #burger {
+    display: block;
+    transition: 1s ease-in-in;
+  }
+  nav #burger.active {
+    position: fixed;
+    left: 80vw;
+  }
+  nav #burger.active .line:first-child {
+    transform: translateY(-300px);
+  }
+  nav #burger.active .line:nth-child(2) {
+    transform: rotate(320deg) translateY(10px);
+    top: -3.5rem;
+  }
+  nav #burger.active .line:nth-child(3) {
+    transform: rotate(-320deg) translateY(-10px);
+    top: -3.5rem;
+  }
+  nav ul {
+    position: fixed;
+    right: 0;
+    top: 0vh;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+    transform: translate(100%);
+    transition: 1s ease-in-out;
+    z-index: 1;
+  }
+  nav ul.light {
+    background-color: hsl(60, 0%, 100%);
+  }
+  nav ul.dark {
+    background-color: hsl(60, 0%, 5%);
+  }
+  nav ul.active {
+    transform: translate(0%);
+  }
+  nav a {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+  nav a.light {
+    color: hsl(0, 100%, 0%);
+  }
+  nav a.dark {
+    color: hsl(0, 0%, 100%);
+  }
+}
+@media screen and (max-width: 760px) {
+  nav ul {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  nav #change-mode {
+    left: 85vw;
+  }
 }
 
 header.light {
@@ -142,11 +184,22 @@ header #slider {
   margin: auto;
   overflow: hidden;
 }
+header #arrow-1.light {
+  content: url(images/angle-small-left-light.png);
+}
+header #arrow-1.dark {
+  content: url(images/angle-small-left-dark.png);
+}
+header #arrow-2.light {
+  content: url(images/angle-small-right-light.png);
+}
+header #arrow-2.dark {
+  content: url(images/angle-small-right-dark.png);
+}
 header .arrow {
-  color: hsl(0, 100%, 1%);
   cursor: pointer;
-  width: 5rem;
-  height: 5rem;
+  width: 7rem;
+  height: 7rem;
 }
 header .slide-container {
   display: none;
@@ -155,7 +208,6 @@ header .slide-container.displaySlide {
   display: block;
 }
 header .slide {
-  background-color: hsl(0, 1%, 50%);
   width: 80vw;
   height: 70vh;
   border-radius: 1.5rem;
@@ -165,6 +217,12 @@ header .slide {
   align-items: center;
   font-size: 3rem;
   margin: 2.3rem 0rem 2.3rem 0rem;
+}
+header .slide.light {
+  background-color: hsl(0, 1%, 50%);
+}
+header .slide.dark {
+  background-color: hsl(0, 1%, 50%);
 }
 @media screen and (max-width: 600px) {
   header .slide {
@@ -177,28 +235,36 @@ header .slide {
   }
 }
 
-section.light {
+section {
   display: flex;
   text-align: center;
-  background-color: hsl(0, 0%, 100%);
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+}
+section.light {
+  background-color: hsl(0, 0%, 100%);
   border-bottom: 0.15rem solid hsl(0, 100%, 1%);
 }
 section.dark {
-  display: flex;
-  text-align: center;
   background-color: hsl(0, 0%, 5%);
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
   border-bottom: 0.15rem solid hsl(0, 0%, 100%);
 }
-section #heading {
+section article {
+  padding: 3rem 0 3rem 0;
+}
+section article h2 {
   font-size: 1.8rem;
+}
+section article.light {
+  color: hsl(0, 100%, 1%);
+}
+section article.dark {
+  color: hsl(0, 100%, 100%);
+}
+section #heading {
+  font-size: 2rem;
   padding: rem 0;
 }
 section #video {
@@ -206,18 +272,24 @@ section #video {
   aspect-ratio: 16/9;
 }
 section #description {
+  padding-top: 0.5rem;
   font-size: 1.5rem;
   display: flex;
   width: 85vw;
 }
 
-footer.light #footer-container {
+footer #footer-container {
   display: flex;
   height: 20vh;
   text-align: center;
-  background-color: hsl(212.1, 100%, 13.9%);
   justify-content: space-around;
   align-items: center;
+}
+footer.light #footer-container {
+  background-color: hsl(212.1, 100%, 13.9%);
+}
+footer.dark #footer-container {
+  background-color: hsl(212.1, 100%, 13.9%);
 }
 footer .icon {
   margin-left: auto;
