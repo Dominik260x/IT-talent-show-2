@@ -24,22 +24,30 @@
         />
         <ul id="bookmarks">
           <li>
-            <a class="bookmarks-element" href="#">O Szkole</a>
+            <a class="bookmarks-element" id="bookmarks-element-1" href="#"
+              >O Szkole</a
+            >
           </li>
           <li>
-            <a class="bookmarks-element" href="#">O Profilu</a>
+            <a class="bookmarks-element" id="bookmarks-element-2" href="#"
+              >O Profilu</a
+            >
           </li>
           <li>
-            <a class="bookmarks-element" href="#">Nauczycie</a>
+            <a class="bookmarks-element" id="bookmarks-element-3" href="#"
+              >Nauczycie</a
+            >
           </li>
           <li>
-            <a class="bookmarks-element" href="#">Sale</a>
+            <a class="bookmarks-element" id="bookmarks-element-4" href="#"
+              >Sale</a
+            >
           </li>
         </ul>
         <button id="burger">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+          <div class="line" id="line-1"></div>
+          <div class="line" id="line-2"></div>
+          <div class="line" id="line-3"></div>
         </button>
         <button id="change-mode">
           <div id="change-mode-dot"></div>
@@ -51,18 +59,24 @@
           <img
             class="arrow"
             onclick="prevSlide()"
-            src="images/left-arrow.png"
+            id="arrow-1"
             alt="left arrow"
           />
           <div id="slides">
-            <div class="slide-container"><div class="slide">slide1</div></div>
-            <div class="slide-container"><div class="slide">slide2</div></div>
-            <div class="slide-container"><div class="slide">slide3</div></div>
+            <div class="slide-container">
+              <div class="slide" id="slide-1">slide1</div>
+            </div>
+            <div class="slide-container">
+              <div class="slide" id="slide-2">slide2</div>
+            </div>
+            <div class="slide-container">
+              <div class="slide" id="slide-3">slide3</div>
+            </div>
           </div>
           <img
             class="arrow"
             onclick="nextSlide()"
-            src="images/right-arrow.png"
+            id="arrow-2"
             alt="right arrow"
           />
         </div>
@@ -80,11 +94,11 @@
             allowfullscreen
           ></iframe>
         </div>
-        <div id="heading">
-          <h1>O Szkole</h1>
-        </div>
 
         <article>
+          <div id="heading">
+            <h1>O Szkole</h1>
+          </div>
           <div id="description">
             <h2>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
