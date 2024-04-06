@@ -5,8 +5,9 @@ $light-nav-burger-ul-background-color: hsl(60, 0%, 100%)
 $light-nav-burger-a-color: hsl(0, 100%, 0%)
 $light-header-background-color: hsl(0, 0%, 100%)
 $light-header-slide-background-color: hsl(0, 1%, 50%)
-$light-header-arrow-color: hsl(0, 100%, 1%)
+$light-header-arrow-container-background-color: hsl(0, 100%, 100%)
 $light-section-background-color: hsl(0, 0%, 100%)
+$light-section-article-color: hsl(0, 100%, 1%)
 $light-footer-background-color: hsl(212.1, 100%, 13.9%)
 $light-border-bottom: hsl(0, 100%, 1%)
 
@@ -16,16 +17,17 @@ $dark-change-mode-background-color: hsl(0, 0%, 15%)
 $dark-change-mode-dot-background-color: hsl(0, 3%, 70%)
 
 $dark-nav-background-color: hsl(212.1, 100%, 13.9%)
-$dark-bookmark-element-a-color: hsl(0, 0%, 5%)
-$dark-change-mode-background-color: hsl(0, 0%, 5%)
-$dark-line-background-color: hsl(0, 0%, 80%)
+$dark-nav-bookmark-element-a-color: hsl(0, 0%, 100%)
+$dark-nav-change-mode-background-color: hsl(0, 0%, 5%)
+$dark-nav-line-background-color: hsl(0, 0%, 80%)
 $dark-nav-burger-ul-background-color: hsl(60, 0%, 5%)
 $dark-nav-burger-a-color: hsl(0, 0%, 100%)
 $dark-change-mode-dot-background-color: hsl(0, 3%, 30%)
 $dark-header-background-color: hsl(0, 0%, 5%)
 $dark-header-slide-background-color: hsl(0, 1%, 50%)
-$dark-header-arrow-color: hsl(0, 100%, 1%)
+$dark-header-arrow-container-background-color: hsl(0, 0%, 100%)
 $dark-section-background-color: hsl(0, 0%, 5%)
+$dark-section-article-color: hsl(0, 100%, 100%)
 $dark-footer-background-color: hsl(212.1, 100%, 13.9%)
 $dark-border-bottom: hsl(0, 0%, 100%)
 /*Global Settings
@@ -48,95 +50,123 @@ body
     overflow: hidden
 
 nav
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0.5rem
+    position: relative
     &.light
         background-color: $light-nav-background-color
-        display: flex
-        justify-content: space-between
-        align-items: center
         border-bottom: 0.15rem solid $light-border-bottom
-        padding: 0.5rem
-        position: relative
     &.dark
         background-color: $dark-nav-background-color
-        display: flex
-        justify-content: space-between
-        align-items: center
         border-bottom: 0.15rem solid $dark-border-bottom
-        padding: 0.5rem
-        position: relative
     & ul
         list-style-type: none
         display: flex
-        justify-content: space-around
+        justify-content: space-evenly
     & a
         text-decoration: none
         font-size: 1.5rem
         font-weight: bold
         position: relative
         padding: 1em
-        color: $light-nav-bookmark-element-a-color
-    #burger
-        background: transparent
-        border: none
-        outline: none
-        cursor: pointer
-        display: none
-    .line
-        width: 4em
-        height: 0.5rem
-        background-color: $light-nav-line-background-color
-        margin: 0.5rem
-        border-radius: 20px
-        transition: 1s ease-in-out
-    @media screen and ( max-width: 1000px)
-        #burger
-            display: block
-            transition: 1s ease-in-in
-        #burger.active .line:first-child
-            transform: translateY(-300px)
-        #burger.active .line:nth-child(2)
-            transform: rotate(320deg) translateY(10px)
-        #burger.active .line:nth-child(3)
-            transform: rotate(-320deg) translateY(-10px)
-        ul
-            position: fixed
-            right: 0
-            top: 22.5vh
-            background-color: $light-nav-burger-ul-background-color
-            height: 77.5vh
-            flex-direction: column
-            text-align: center
-            transform: translate(100%)
-            transition: 1s ease-in-out
-            z-index: 1
-        ul.active
-            transform: translate(0%)
-        a
-            color: $light-nav-burger-a-color
-            font-size: 1.5rem
-            letter-spacing: 2px
-        @media screen and ( max-width: 760px)
-            ul
-                width: 100%
+        &.light
+            color: $light-nav-bookmark-element-a-color
+        &.dark
+            color: $dark-nav-bookmark-element-a-color
+
     & #change-mode
         width: 3rem
         height: 2rem
-        background-color: $light-change-mode-background-color
         position: absolute
         outline-width: 5px
         cursor: pointer
         border-radius: 50px
         left: 95vw
         top: 2vh
+        &.light
+            background-color: $light-change-mode-background-color
+        &.dark
+            background-color: $dark-change-mode-background-color
     & #change-mode-dot
         display: block
         width: 1.3rem
         height: 1.3rem
         margin: 0.1rem 0.1rem
         position: relative
-        background-color: $light-change-mode-dot-background-color
         border-radius: 100%
         transition: background-color 0.3s, transform 0.3s
+        &.light
+            background-color: $light-change-mode-dot-background-color
+            left: 0.1rem
+        &.dark
+            background-color: $dark-change-mode-dot-background-color
+            transform: translateX(1.15rem)
+    #burger
+        background: transparent
+        border: none
+        outline: none
+        cursor: pointer
+        display: none
+        z-index: 1
+    .line
+        width: 4em
+        height: 0.5rem
+        margin: 0.5rem
+        border-radius: 20px
+        transition: 1s ease-in-out
+        position: relative
+        &.light
+            background-color: $light-nav-line-background-color
+        &.dark
+            background-color: $dark-nav-line-background-color
+    @media screen and ( max-width: 1000px)
+        #burger
+            display: block
+            transition: 1s ease-in-in
+        #burger.active
+            position: fixed
+            left: 80vw
+        #burger.active .line:first-child
+            transform: translateY(-300px)
+        #burger.active .line:nth-child(2)
+            transform: rotate(320deg) translateY(10px)
+            top: -3.5rem
+        #burger.active .line:nth-child(3)
+            transform: rotate(-320deg) translateY(-10px)
+            top: -3.5rem
+        ul
+            position: fixed
+            right: 0
+            top: 0vh
+            height: 100%
+            flex-direction: column
+            text-align: center
+            transform: translate(100%)
+            transition: 1s ease-in-out
+            z-index: 1
+            &.light
+                background-color: $light-nav-burger-ul-background-color
+            &.dark
+                background-color: $dark-nav-burger-ul-background-color
+
+        ul.active
+            transform: translate(0%)
+        a
+            font-size: 1.5rem
+            letter-spacing: 2px
+            &.light
+                color: $light-nav-burger-a-color
+            &.dark
+                color: $dark-nav-burger-a-color
+    @media screen and ( max-width: 760px)
+        ul
+            width: 100%
+    @media screen and ( max-width: 600px)
+        #change-mode
+            left: 85vw
+
 header
     &.light
         background-color: $light-header-background-color
@@ -150,17 +180,26 @@ header
         width: 100%
         margin: auto
         overflow: hidden
+    & #arrow-1
+        &.light
+            content: url(images/angle-small-left-light.png)
+        &.dark
+            content: url(images/angle-small-left-dark.png)
+    & #arrow-2
+        &.light
+            content: url(images/angle-small-right-light.png)
+        &.dark
+            content: url(images/angle-small-right-dark.png)
     & .arrow
-        color: $light-header-arrow-color
         cursor: pointer
-        width: 5rem
-        height: 5rem
+        width: 7rem
+        height: 7rem
+
     & .slide-container
         display: none
         &.displaySlide
             display: block
     & .slide
-        background-color: $light-header-slide-background-color
         width: 80vw
         height: 70vh
         border-radius: 1.5rem
@@ -170,6 +209,10 @@ header
         align-items: center
         font-size: 3rem
         margin: 2.3rem 0rem 2.3rem 0rem
+        &.light
+            background-color: $light-header-slide-background-color
+        &.dark
+            background-color: $dark-header-slide-background-color
     @media screen and ( max-width: 600px)
         .slide
             width: 16rem
@@ -179,27 +222,28 @@ header
             height: 6rem
 
 section
+    display: flex
+    text-align: center
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-around
+    flex-direction: column
     &.light
-        display: flex
-        text-align: center
         background-color: $light-section-background-color
-        flex-wrap: wrap
-        align-items: center
-        justify-content: space-around
-        flex-direction: column
         border-bottom: 0.15rem solid $light-border-bottom
     &.dark
-        display: flex
-        text-align: center
         background-color: $dark-section-background-color
-        flex-wrap: wrap
-        align-items: center
-        justify-content: space-around
-        flex-direction: column
         border-bottom: 0.15rem solid $dark-border-bottom
-    & h1
+    & article
+        padding: 3rem 0 3rem 0
+        & h2
+            font-size: 1.8rem
+        &.light
+            color: $light-section-article-color
+        &.dark
+            color: $dark-section-article-color
     #heading
-        font-size: 1.8rem
+        font-size: 2rem
         padding: rem 0
     #video-container
 
@@ -208,26 +252,22 @@ section
         aspect-ratio: 16/9
 
     #description
+        padding-top: 0.5rem
         font-size: 1.5rem
         display: flex
         width: 85vw
 
 footer
-    &.light #footer-container
-        display: flex
-        height: 20vh
-        text-align: center
-        background-color: $light-footer-background-color
-        justify-content: space-around
-        align-items: center
-    &.dark #footer-container
-        display: flex
-        height: 20vh
-        text-align: center
-        background-color: $dark-footer-background-color
-        justify-content: space-around
-        align-items: center
     & #footer-container
+        display: flex
+        height: 20vh
+        text-align: center
+        justify-content: space-around
+        align-items: center
+    &.light #footer-container
+        background-color: $light-footer-background-color
+    &.dark #footer-container
+        background-color: $dark-footer-background-color
     .icon
         margin-left: auto
         margin-right: auto
