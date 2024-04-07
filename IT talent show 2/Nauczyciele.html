@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sass.css" />
+    <link rel="stylesheet" href="sass.sass" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2? family=Lato&display=swap"
+      rel="arkusz stylów"
+    />
+    <title>Profil Informatyczny w Staszicu</title>
+  </head>
+
+  <body>
+    <main>
+      <nav>
+        <img
+          id="logo"
+          src="images/logo.png"
+          alt="Logo szkoły im.Stanisława Staszic w Nakle nad Notecią"
+        />
+        <ul id="bookmarks">
+          <li>
+            <a
+              class="bookmarks-element"
+              id="bookmarks-element-1"
+              href="index.html"
+              >O Szkole</a
+            >
+          </li>
+          <li>
+            <a
+              class="bookmarks-element"
+              id="bookmarks-element-2"
+              href="O Profilu.html"
+              >O Profilu</a
+            >
+          </li>
+          <li>
+            <a
+              class="bookmarks-element"
+              id="bookmarks-element-3"
+              href="Nauczyciele.html"
+              >Nauczycie</a
+            >
+          </li>
+          <li>
+            <a
+              class="bookmarks-element"
+              id="bookmarks-element-4"
+              href="Rekrutacja.html"
+              >Rekrutacja</a
+            >
+          </li>
+        </ul>
+        <button id="burger">
+          <div class="line" id="line-1"></div>
+          <div class="line" id="line-2"></div>
+          <div class="line" id="line-3"></div>
+        </button>
+        <button id="change-mode">
+          <div id="change-mode-dot"></div>
+        </button>
+      </nav>
+
+      <header>
+        <div id="slider">
+          <img
+            class="arrow"
+            onclick="prevSlide()"
+            id="arrow-1"
+            alt="left arrow"
+          />
+          <div id="slides">
+            <div class="slide-container">
+              <div class="slide" id="slide-1">slide1</div>
+            </div>
+            <div class="slide-container">
+              <div class="slide" id="slide-2">slide2</div>
+            </div>
+            <div class="slide-container">
+              <div class="slide" id="slide-3">slide3</div>
+            </div>
+          </div>
+          <img
+            class="arrow"
+            onclick="nextSlide()"
+            id="arrow-2"
+            alt="right arrow"
+          />
+        </div>
+      </header>
+
+      <section>
+        <div id="video-container">
+          <iframe
+            id="video"
+            src="https://www.youtube.com/embed/xe2NAof7mEc?si=lu6kQWExmv-Q9led"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <article>
+          <div id="heading">
+            <h1>O Nauczycielach</h1>
+          </div>
+          <div id="description">
+            <h2>
+              Nauczyciele profilu informatycznego w Technikum im. Stanisława
+              Staszica w Nakle nad Notecią to zespół wykwalifikowanych i
+              doświadczonych profesjonalistów, którzy są pasjonatami swojej
+              dziedziny. Każdy z nich posiada solidne wykształcenie i
+              doświadczenie w branży IT, co pozwala im przekazywać uczniom
+              najnowszą wiedzę i umiejętności. Nasi nauczyciele są zaangażowani
+              w ciągły rozwój swoich umiejętności, regularnie uczestnicząc w
+              szkoleniach i warsztatach branżowych. Dzięki temu są na bieżąco z
+              najnowszymi trendami i technologiami w branży IT, które następnie
+              wprowadzają do programu nauczania. Ale co najważniejsze, nasi
+              nauczyciele są prawdziwymi mentorami dla naszych uczniów. Dążą do
+              stworzenia środowiska, które promuje ciekawość, kreatywność i
+              dążenie do doskonałości. Są dostępni, aby pomóc uczniom zrozumieć
+              trudne koncepcje, rozwijać umiejętności problem-solving i odkrywać
+              swoje pasje.
+            </h2>
+          </div>
+        </article>
+      </section>
+      <footer>
+        <div id="footer-container">
+          <a href="#">
+            <div class="icon" id="Facebook">
+              <img src="images/facebook.png" alt="Ikona Facebooka" />
+            </div>
+          </a>
+          <a href="#">
+            <div class="icon" id="YouTube">
+              <img src="images/youtube.png" alt="Ikona YouTuba" />
+            </div>
+          </a>
+          <a href="#">
+            <div class="icon" id="TikTok">
+              <img src="images/tik-tok.png" alt="Ikona TikTok" />
+            </div>
+          </a>
+          <a href="#">
+            <div class="icon" id="Instagram">
+              <img src="images/instagram.png" alt="Ikona Instagram" />
+            </div>
+          </a>
+          <div style="clear: both"></div>
+        </div>
+      </footer>
+      <script src="burger.js"></script>
+      <script src="slider.js"></script>
+      <script src="changeModeTheme.js"></script>
+    </main>
+  </body>
+</html>
