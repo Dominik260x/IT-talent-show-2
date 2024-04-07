@@ -1,6 +1,6 @@
 $light-nav-background-color: hsl(212.1, 100%, 13.9%)
 $light-nav-bookmark-element-a-color: hsl(0, 0%, 100%)
-$light-nav-line-background-color: hsl(0, 100%, 100%)
+$light-nav-line-background-color: hsl(0, 100%, 1%)
 $light-nav-burger-ul-background-color: hsl(60, 0%, 100%)
 $light-nav-burger-a-color: hsl(0, 100%, 0%)
 $light-header-background-color: hsl(0, 0%, 100%)
@@ -9,9 +9,9 @@ $light-header-arrow-container-background-color: hsl(0, 100%, 100%)
 $light-section-background-color: hsl(0, 0%, 100%)
 $light-section-article-color: hsl(0, 100%, 1%)
 $light-footer-background-color: hsl(212.1, 100%, 13.9%)
-$light-border-bottom: hsl(0, 100%, 1%)
+$light-border-bottom: hsl(0, 0%, 0%)
 
-$light-change-mode-background-color: hsl(0, 0%, 100%)
+$light-change-mode-background-color: hsl(0, 0%, 85%)
 $light-change-mode-dot-background-color: hsl(0, 3%, 30%)
 $dark-change-mode-background-color: hsl(0, 0%, 15%)
 $dark-change-mode-dot-background-color: hsl(0, 3%, 70%)
@@ -192,8 +192,8 @@ header
             content: url(images/angle-small-right-dark.png)
     & .arrow
         cursor: pointer
-        width: 7rem
-        height: 7rem
+        width: 8rem
+        height: 8rem
 
     & .slide-container
         display: none
@@ -256,7 +256,14 @@ section
         font-size: 1.5rem
         display: flex
         width: 85vw
-
+    & #recruitment-link
+        text-decoration: none
+        font-size: 2.5rem
+        font-weight: bold
+        &.light
+            color: $light-section-article-color
+        &.dark
+            color: $dark-section-article-color
 footer
     & #footer-container
         display: flex
