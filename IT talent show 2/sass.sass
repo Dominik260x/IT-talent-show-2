@@ -24,7 +24,7 @@ $dark-nav-burger-ul-background-color: hsl(60, 0%, 5%)
 $dark-nav-burger-a-color: hsl(0, 0%, 100%)
 $dark-change-mode-dot-background-color: hsl(0, 3%, 30%)
 $dark-header-background-color: hsl(0, 0%, 5%)
-$dark-header-slide-background-color: hsl(0, 1%, 50%)
+$dark-header-slide-background-color: hsl(0, 1%, 30%)
 $dark-header-arrow-container-background-color: hsl(0, 0%, 100%)
 $dark-section-background-color: hsl(0, 0%, 5%)
 $dark-section-article-color: hsl(0, 100%, 100%)
@@ -203,20 +203,107 @@ header
         width: 80vw
         height: 70vh
         border-radius: 1.5rem
-        aspect-ratio: 16/9
+        aspect-ratio: 9/16
         display: flex
         justify-content: center
         align-items: center
-        font-size: 3rem
         margin: 2.3rem 0rem 2.3rem 0rem
         &.light
             background-color: $light-header-slide-background-color
         &.dark
             background-color: $dark-header-slide-background-color
+    & #slide-1
+        display: flex
+        padding: 2rem
+        & #slide-1-images
+            & #slide-1-images-1
+                width: 34vw
+            & #slide-1-images-aside
+                display: flex
+                & #slide-1-images-2
+                    width: 17vw
+                & #slide-1-images-3
+                    width: 17vw
+        & #slide-1-article
+            color: white
+            padding: 0.5rem
+            font-size: 1.3vw
+    & #slide-2
+        display: flex
+        padding: 2rem
+        & #slide-2-images
+            display: flex
+            & #slide-2-images-1
+                width: 20vw
+            & #slide-2-images-aside
+                float: right
+                & #slide-2-images-2
+                    width: 11.5vw
+                & #slide-2-images-3
+                    width: 11.5vw
+        & #slide-2-article h2
+            color: white
+            padding: 0.5rem
+            font-size: 2.12vw
+    & #slide-3
+        display: flex
+        & #slide-3-images
+            & #slide-3-images-1
+                height: 65vh
+        & #slide-3-article
+            color: white
+            padding: 0.5rem
+            font-size: 1.9vw
+
     @media screen and ( max-width: 600px)
         .slide
             width: 16rem
+            height: 95vh
             aspect-ratio: 9/16
+        #slide-1
+            flex-wrap: wrap
+            align-content: center
+            & #slide-1-images
+                & #slide-1-images-1
+                    width: 60vw
+                & #slide-1-images-aside
+                    display: flex
+                    & #slide-1-images-2
+                        width: 30vw
+                    & #slide-1-images-3
+                        width: 30vw
+            #slide-1-article
+                color: white
+                padding: 0.5rem
+                font-size: 2.6vw
+
+        #slide-2
+            flex-wrap: wrap
+            align-content: center
+            & #slide-2-images
+                & #slide-2-images-1
+                    width: 33vw
+                & #slide-2-images-aside
+                    float: right
+                    & #slide-2-images-2
+                        width: 16.5vw
+                    & #slide-2-images-3
+                        width: 16.5vw
+            & #slide-2-article h2
+                color: white
+                font-size: 4vw
+
+        #slide-3
+            flex-wrap: wrap
+            align-content: center
+            & #slide-3-images
+                & #slide-3-images-1
+                    width: 30vh
+            & #slide-3-article
+                color: white
+                padding: 0.5rem
+                font-size: 3.2vw
+
         .arrow
             width: 4rem
             height: 6rem
@@ -250,7 +337,10 @@ section
     #video
         width: 85vw
         aspect-ratio: 16/9
-
+    article
+        background-color: hsl(0, 0%, 30%)
+        border-radius: 1.5rem
+        margin: 3rem 0 2rem 0
     #description
         padding-top: 0.5rem
         font-size: 1.5rem
