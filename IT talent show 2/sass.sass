@@ -4,10 +4,10 @@ $light-nav-line-background-color: hsl(0, 100%, 1%)
 $light-nav-burger-ul-background-color: hsl(60, 0%, 100%)
 $light-nav-burger-a-color: hsl(0, 100%, 0%)
 $light-header-background-color: hsl(0, 0%, 100%)
-$light-header-slide-background-color: hsl(0, 1%, 50%)
+$light-header-slide-background-color: hsl(0, 1%, 30%)
 $light-header-arrow-container-background-color: hsl(0, 100%, 100%)
-$light-section-background-color: hsl(0, 0%, 100%)
-$light-section-article-color: hsl(0, 100%, 1%)
+$light-section-background-color: hsl(0, 0%, 90%)
+$light-section-article-color: hsl(0, 0%, 90%)
 $light-footer-background-color: hsl(212.1, 100%, 13.9%)
 $light-border-bottom: hsl(0, 0%, 0%)
 
@@ -180,6 +180,7 @@ header
         width: 100%
         margin: auto
         overflow: hidden
+        background-image: url(images/dronka.jpg)
     & #arrow-1
         &.light
             content: url(images/angle-small-left-light.png)
@@ -208,6 +209,7 @@ header
         justify-content: center
         align-items: center
         margin: 2.3rem 0rem 2.3rem 0rem
+        opacity: 0.95
         &.light
             background-color: $light-header-slide-background-color
         &.dark
@@ -216,31 +218,28 @@ header
         display: flex
         padding: 2rem
         & #slide-1-images
-            & #slide-1-images-1
-                width: 34vw
             & #slide-1-images-aside
                 display: flex
+                flex-wrap: wrap
                 & #slide-1-images-2
-                    width: 17vw
+                    width: 30vw
                 & #slide-1-images-3
-                    width: 17vw
+                    width: 30vw
         & #slide-1-article
             color: white
             padding: 0.5rem
             font-size: 1.3vw
+
     & #slide-2
         display: flex
-        padding: 2rem
+        padding: 0.5rem
         & #slide-2-images
-            display: flex
-            & #slide-2-images-1
-                width: 20vw
             & #slide-2-images-aside
-                float: right
+                display: flex
                 & #slide-2-images-2
-                    width: 11.5vw
+                    width: 16vw
                 & #slide-2-images-3
-                    width: 11.5vw
+                    width: 16vw
         & #slide-2-article h2
             color: white
             padding: 0.5rem
@@ -264,41 +263,37 @@ header
             flex-wrap: wrap
             align-content: center
             & #slide-1-images
-                & #slide-1-images-1
-                    width: 60vw
                 & #slide-1-images-aside
                     display: flex
                     & #slide-1-images-2
-                        width: 30vw
+                        width: 60vw
                     & #slide-1-images-3
-                        width: 30vw
+                        width: 60vw
             #slide-1-article
                 color: white
                 padding: 0.5rem
-                font-size: 2.6vw
+                font-size: 2.8vw
 
         #slide-2
             flex-wrap: wrap
             align-content: center
             & #slide-2-images
-                & #slide-2-images-1
-                    width: 33vw
                 & #slide-2-images-aside
                     float: right
                     & #slide-2-images-2
-                        width: 16.5vw
+                        width: 31vw
                     & #slide-2-images-3
-                        width: 16.5vw
+                        width: 31vw
             & #slide-2-article h2
                 color: white
-                font-size: 4vw
+                font-size: 4.6vw
 
         #slide-3
             flex-wrap: wrap
             align-content: center
             & #slide-3-images
                 & #slide-3-images-1
-                    width: 30vh
+                    width: 38vh
             & #slide-3-article
                 color: white
                 padding: 0.5rem
@@ -330,7 +325,7 @@ section
         &.dark
             color: $dark-section-article-color
     #video-container
-
+        padding-top: 6rem
     #video
         width: 85vw
         aspect-ratio: 16/9
@@ -371,7 +366,6 @@ footer
         background-color: $dark-footer-background-color
     .icon
         margin-left: auto
-        margin-right: auto
         width: 24vw
     #Facebook
 
