@@ -184,7 +184,7 @@ header
         animation: slider-animation 1s ease-in-out
     @keyframes slider-animation
         0%
-            opacity: 0.6
+            opacity: 0.8
         100%
             opacity: 1
     & #arrow-1
@@ -203,7 +203,7 @@ header
             animation: slider-animation 1s ease-in-out
     @keyframes slider-animation
         0%
-            opacity: 0.5
+            opacity: 0.8
         100%
             opacity: 1
     & .slide
@@ -228,9 +228,9 @@ header
                 display: flex
                 flex-wrap: wrap
                 & #slide-1-images-2
-                    width: 30vw
+                    width: 28vw
                 & #slide-1-images-3
-                    width: 30vw
+                    width: 28vw
         & #slide-1-article
             color: white
             padding: 0.5rem
@@ -254,11 +254,12 @@ header
         display: flex
         & #slide-3-images
             & #slide-3-images-1
-                height: 65vh
+                width: 22vw
+                padding-left: 2rem
         & #slide-3-article
             color: white
             padding: 0.5rem
-            font-size: 1.9vw
+            font-size: 1.8vw
 
     @media screen and ( max-width: 600px)
         .slide
@@ -299,15 +300,106 @@ header
             align-content: center
             & #slide-3-images
                 & #slide-3-images-1
-                    width: 38vh
+                    max-width: 70vw
+                    min-width: 58vw
+                    padding-left: 0rem
             & #slide-3-article
                 color: white
                 padding: 0.5rem
                 font-size: 3.2vw
-
         .arrow
             width: 4rem
             height: 6rem
+
+    @media screen and ( min-width: 760px ) and ( max-width: 1100px)
+        & .slide
+            width: 70vw
+            height: 85vh
+        & #slide-1
+            flex-wrap: wrap
+            align-content: center
+        & #slide-1-images
+        & #slide-1-images-aside
+            display: flex
+            & #slide-1-images-2
+                width: 30vw
+            & #slide-1-images-3
+                width: 30vw
+        #slide-1-article
+            color: white
+            padding: 0.5rem
+            font-size: 2.5vw
+        #slide-2
+            flex-wrap: wrap
+            align-content: center
+        & #slide-2-images
+            & #slide-2-images-aside
+                float: right
+                & #slide-2-images-2
+                    width: 31vw
+                & #slide-2-images-3
+                    width: 31vw
+        & #slide-2-article h2
+            color: white
+            font-size: 3.6vw
+
+        #slide-3
+            flex-wrap: wrap
+            align-content: center
+        & #slide-3-images
+            & #slide-3-images-1
+                max-width: 70vw
+                min-width: 40vw
+                padding-left: 0rem
+        & #slide-3-article
+            color: white
+            padding: 0.5rem
+            font-size: 2.8vw
+
+    @media screen and ( max-width:  300px)
+        & .slide
+            width: 60vw
+            height: 85vh
+        #slide-1
+            flex-wrap: wrap
+            align-content: center
+            & #slide-1-images
+                & #slide-1-images-aside
+                    display: flex
+                    & #slide-1-images-2
+                        width: 55vw
+                    & #slide-1-images-3
+                        width: 55vw
+            #slide-1-article
+                color: white
+                padding: 0.5rem
+                font-size: 2.5vw
+        #slide-2
+            flex-wrap: wrap
+            align-content: center
+            & #slide-2-images
+                & #slide-2-images-aside
+                    float: right
+                    & #slide-2-images-2
+                        width: 31vw
+                    & #slide-2-images-3
+                        width: 31vw
+            & #slide-2-article h2
+                color: white
+                font-size: 3.6vw
+
+        #slide-3
+            flex-wrap: wrap
+            align-content: center
+            & #slide-3-images
+                & #slide-3-images-1
+                    max-width: 70vw
+                    min-width: 40vw
+                    padding-left: 0rem
+            & #slide-3-article
+                color: white
+                padding: 0.5rem
+                font-size: 2.8vw
 
 section
     display: flex
