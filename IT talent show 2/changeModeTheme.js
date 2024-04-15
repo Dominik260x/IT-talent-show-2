@@ -4,6 +4,7 @@ let theme = localStorage.getItem("theme");
 switchButton.addEventListener("click", () => {
   if (theme === "dark") {
     document.querySelector("nav").classList.remove("dark");
+    document.querySelector("nav ul").classList.remove("dark");
     document.querySelector("nav #bookmarks-element-1").classList.remove("dark");
     document.querySelector("nav #bookmarks-element-2").classList.remove("dark");
     document.querySelector("nav #bookmarks-element-3").classList.remove("dark");
@@ -11,7 +12,6 @@ switchButton.addEventListener("click", () => {
     document.querySelector("nav #line-1").classList.remove("dark");
     document.querySelector("nav #line-2").classList.remove("dark");
     document.querySelector("nav #line-3").classList.remove("dark");
-    document.querySelector("nav ul").classList.remove("dark");
     document.querySelector("nav #change-mode").classList.remove("dark");
     document.querySelector("nav #change-mode-dot").classList.remove("dark");
     document.querySelector("header").classList.remove("dark");
