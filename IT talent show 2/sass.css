@@ -102,7 +102,7 @@ nav .line {
   position: relative;
 }
 nav .line.light {
-  background-color: hsl(0, 100%, 1%);
+  background-color: hsl(0, 0%, 50%);
 }
 nav .line.dark {
   background-color: hsl(0, 0%, 80%);
@@ -184,18 +184,21 @@ header #slider {
   margin: auto;
   overflow: hidden;
   background-image: url(images/dronka.jpg);
+  animation: slider-animation 1s ease-in-out;
 }
-header #arrow-1.light {
+@keyframes slider-animation {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+header #arrow-1 {
   content: url(images/angle-small-left-light.png);
 }
-header #arrow-1.dark {
-  content: url(images/angle-small-left-dark.png);
-}
-header #arrow-2.light {
+header #arrow-2 {
   content: url(images/angle-small-right-light.png);
-}
-header #arrow-2.dark {
-  content: url(images/angle-small-right-dark.png);
 }
 header .arrow {
   cursor: pointer;
@@ -207,6 +210,15 @@ header .slide-container {
 }
 header .slide-container.displaySlide {
   display: block;
+  animation: slider-animation 1s ease-in-out;
+}
+@keyframes slider-animation {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 header .slide {
   width: 80vw;
@@ -371,6 +383,10 @@ section article {
   background-color: hsl(0, 0%, 30%);
   border-radius: 1.5rem;
   margin: 3rem 0 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
 }
 section #heading {
   font-size: 2.4rem;
