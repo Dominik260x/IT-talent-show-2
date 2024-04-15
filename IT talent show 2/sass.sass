@@ -1,6 +1,6 @@
 $light-nav-background-color: hsl(212.1, 100%, 13.9%)
 $light-nav-bookmark-element-a-color: hsl(0, 0%, 100%)
-$light-nav-line-background-color: hsl(0, 100%, 1%)
+$light-nav-line-background-color: hsl(0, 0%, 50%)
 $light-nav-burger-ul-background-color: hsl(60, 0%, 100%)
 $light-nav-burger-a-color: hsl(0, 100%, 0%)
 $light-header-background-color: hsl(0, 0%, 100%)
@@ -181,16 +181,16 @@ header
         margin: auto
         overflow: hidden
         background-image: url(images/dronka.jpg)
+        animation: slider-animation 1s ease-in-out
+    @keyframes slider-animation
+        0%
+            opacity: 0.6
+        100%
+            opacity: 1
     & #arrow-1
-        &.light
-            content: url(images/angle-small-left-light.png)
-        &.dark
-            content: url(images/angle-small-left-dark.png)
+        content: url(images/angle-small-left-light.png)
     & #arrow-2
-        &.light
-            content: url(images/angle-small-right-light.png)
-        &.dark
-            content: url(images/angle-small-right-dark.png)
+        content: url(images/angle-small-right-light.png)
     & .arrow
         cursor: pointer
         width: 8rem
@@ -200,6 +200,12 @@ header
         display: none
         &.displaySlide
             display: block
+            animation: slider-animation 1s ease-in-out
+    @keyframes slider-animation
+        0%
+            opacity: 0.5
+        100%
+            opacity: 1
     & .slide
         width: 80vw
         height: 70vh
@@ -293,7 +299,7 @@ header
             align-content: center
             & #slide-3-images
                 & #slide-3-images-1
-                    width: 32vw
+                    width: 38vh
             & #slide-3-article
                 color: white
                 padding: 0.5rem
@@ -333,6 +339,10 @@ section
         background-color: hsl(0, 0%, 30%)
         border-radius: 1.5rem
         margin: 3rem 0 2rem 0
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        flex-direction: column
     #heading
         font-size: 2.4rem
         padding: rem 0
