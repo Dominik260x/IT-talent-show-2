@@ -168,6 +168,21 @@ nav .line.dark {
     left: 85vw;
   }
 }
+@media screen and (max-width: 300px) {
+  nav #change-mode {
+    left: 80vw;
+  }
+}
+@media screen and (max-height: 500px) {
+  nav #change-mode {
+    left: 94vw;
+  }
+}
+@media screen and (max-height: 400px) {
+  nav #change-mode {
+    left: 92vw;
+  }
+}
 
 header.light {
   background-color: hsl(0, 0%, 100%);
@@ -252,9 +267,13 @@ header #slide-1 #slide-1-images #slide-1-images-aside #slide-1-images-3 {
   width: 28vw;
 }
 header #slide-1 #slide-1-article {
+  text-align: center;
   color: white;
   padding: 0.5rem;
   font-size: 1.3vw;
+}
+header #slide-1 #slide-1-article a {
+  color: hsl(240, 100%, 40%);
 }
 header #slide-2 {
   display: flex;
@@ -269,19 +288,21 @@ header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-2 {
 header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-3 {
   width: 16vw;
 }
-header #slide-2 #slide-2-article h2 {
+header #slide-2 #slide-2-article {
+  text-align: center;
   color: white;
   padding: 0.5rem;
-  font-size: 2.12vw;
+  font-size: 1.4vw;
 }
 header #slide-3 {
   display: flex;
 }
 header #slide-3 #slide-3-images #slide-3-images-1 {
   width: 22vw;
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 header #slide-3 #slide-3-article {
+  text-align: center;
   color: white;
   padding: 0.5rem;
   font-size: 1.8vw;
@@ -300,10 +321,10 @@ header #slide-3 #slide-3-article {
     display: flex;
   }
   header #slide-1 #slide-1-images #slide-1-images-aside #slide-1-images-2 {
-    width: 60vw;
+    min-width: 60vw;
   }
   header #slide-1 #slide-1-images #slide-1-images-aside #slide-1-images-3 {
-    width: 60vw;
+    min-width: 60vw;
   }
   header #slide-1 #slide-1-article {
     color: white;
@@ -318,13 +339,12 @@ header #slide-3 #slide-3-article {
     float: right;
   }
   header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-2 {
-    width: 31vw;
+    min-width: 31vw;
   }
   header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-3 {
-    width: 31vw;
+    min-width: 31vw;
   }
   header #slide-2 #slide-2-article h2 {
-    color: white;
     font-size: 4.6vw;
   }
   header #slide-3 {
@@ -332,12 +352,10 @@ header #slide-3 #slide-3-article {
     align-content: center;
   }
   header #slide-3 #slide-3-images #slide-3-images-1 {
-    max-width: 70vw;
-    min-width: 58vw;
+    min-width: 65vw;
     padding-left: 0rem;
   }
   header #slide-3 #slide-3-article {
-    color: white;
     padding: 0.5rem;
     font-size: 3.2vw;
   }
@@ -346,7 +364,7 @@ header #slide-3 #slide-3-article {
     height: 6rem;
   }
 }
-@media screen and (min-width: 760px) and (max-width: 1100px) {
+@media screen and (min-width: 760px) and (max-width: 1100px) and (min-height: 700px) {
   header .slide {
     width: 70vw;
     height: 85vh;
@@ -355,19 +373,19 @@ header #slide-3 #slide-3-article {
     flex-wrap: wrap;
     align-content: center;
   }
-  header #slide-1-images-aside {
+  header #slide-1-images #slide-1-images-aside {
     display: flex;
+    justify-content: center;
   }
-  header #slide-1-images-aside #slide-1-images-2 {
-    width: 30vw;
+  header #slide-1-images #slide-1-images-aside #slide-1-images-2 {
+    min-width: 45vw;
   }
-  header #slide-1-images-aside #slide-1-images-3 {
-    width: 30vw;
+  header #slide-1-images #slide-1-images-aside #slide-1-images-3 {
+    min-width: 45vw;
   }
-  header #slide-1-article {
-    color: white;
+  header #slide-1-article h2 {
     padding: 0.5rem;
-    font-size: 2.5vw;
+    font-size: 3vw;
   }
   header #slide-2 {
     flex-wrap: wrap;
@@ -377,38 +395,36 @@ header #slide-3 #slide-3-article {
     float: right;
   }
   header #slide-2-images #slide-2-images-aside #slide-2-images-2 {
-    width: 31vw;
+    min-width: 32vw;
   }
   header #slide-2-images #slide-2-images-aside #slide-2-images-3 {
-    width: 31vw;
+    min-width: 32vw;
   }
   header #slide-2-article h2 {
     color: white;
-    font-size: 3.6vw;
+    font-size: 3vw;
   }
   header #slide-3 {
     flex-wrap: wrap;
     align-content: center;
   }
   header #slide-3-images #slide-3-images-1 {
-    max-width: 70vw;
-    min-width: 40vw;
-    padding-left: 0rem;
+    min-width: 50vw;
+    padding-top: 1rem;
   }
-  header #slide-3-article {
+  header #slide-3-article h2 {
     color: white;
     padding: 0.5rem;
-    font-size: 2.8vw;
+    font-size: 3.8vw;
   }
 }
-@media screen and (max-width: 300px) {
+@media screen and (min-width: 200px) and (max-width: 300px) {
   header .slide {
     width: 60vw;
     height: 85vh;
   }
-  header #slide-1 {
-    flex-wrap: wrap;
-    align-content: center;
+  header #slide-1 #slide-1-images {
+    padding-top: 0.5rem;
   }
   header #slide-1 #slide-1-images #slide-1-images-aside {
     display: flex;
@@ -420,9 +436,144 @@ header #slide-3 #slide-3-article {
     width: 55vw;
   }
   header #slide-1 #slide-1-article {
-    color: white;
     padding: 0.5rem;
     font-size: 2.5vw;
+  }
+  header #slide-2 #slide-2-images #slide-2-images-aside {
+    float: right;
+  }
+  header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-2 {
+    width: 28vw;
+  }
+  header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-3 {
+    width: 28vw;
+  }
+  header #slide-2 #slide-2-article h2 {
+    font-size: 4.4vw;
+  }
+  header #slide-3 #slide-3-images {
+    padding-left: 0rem;
+  }
+  header #slide-3 #slide-3-images #slide-3-images-1 {
+    max-width: 30vw;
+    padding-left: 0rem;
+  }
+  header #slide-3 #slide-3-article {
+    padding: 0.5rem;
+    font-size: 3.5vw;
+  }
+}
+@media screen and (min-height: 300px) and (max-height: 400px) {
+  header .slide {
+    width: 66vw;
+    height: 95vh;
+  }
+  header #slide-1 #slide-1-images {
+    padding-top: 0.5rem;
+  }
+  header #slide-1 #slide-1-images #slide-1-images-aside {
+    display: flex;
+  }
+  header #slide-1 #slide-1-images #slide-1-images-aside #slide-1-images-2 {
+    width: 32vw;
+  }
+  header #slide-1 #slide-1-images #slide-1-images-aside #slide-1-images-3 {
+    width: 32vw;
+  }
+  header #slide-1 #slide-1-article {
+    padding: 0.5rem;
+    font-size: 1.3vw;
+  }
+  header #slide-2 #slide-2-images #slide-2-images-aside {
+    float: right;
+  }
+  header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-2 {
+    width: 16vw;
+  }
+  header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-3 {
+    width: 16vw;
+  }
+  header #slide-2 #slide-2-article h2 {
+    font-size: 2.1vw;
+  }
+  header #slide-3 #slide-3-images {
+    padding-left: 1rem;
+  }
+  header #slide-3 #slide-3-images #slide-3-images-1 {
+    max-width: 38vw;
+    padding-left: 0rem;
+  }
+  header #slide-3 #slide-3-article {
+    padding: 0.5rem;
+    font-size: 1.9vw;
+  }
+}
+@media screen and (min-height: 400px) and (max-height: 500px) {
+  header .slide {
+    width: 75vw;
+    height: 95vh;
+  }
+  header #slide-1 #slide-1-images {
+    padding-top: 0.5rem;
+  }
+  header #slide-1 #slide-1-images #slide-1-images-aside {
+    display: flex;
+  }
+  header #slide-1 #slide-1-images #slide-1-images-aside #slide-1-images-2 {
+    width: 35vw;
+  }
+  header #slide-1 #slide-1-images #slide-1-images-aside #slide-1-images-3 {
+    width: 35vw;
+  }
+  header #slide-1 #slide-1-article {
+    padding: 0.5rem;
+    font-size: 1.3vw;
+  }
+  header #slide-2 #slide-2-images #slide-2-images-aside {
+    float: right;
+  }
+  header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-2 {
+    width: 17vw;
+  }
+  header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-3 {
+    width: 17vw;
+  }
+  header #slide-2 #slide-2-article h2 {
+    font-size: 2.1vw;
+  }
+  header #slide-3 #slide-3-images {
+    padding-left: 1rem;
+  }
+  header #slide-3 #slide-3-images #slide-3-images-1 {
+    max-width: 35vw;
+    padding-left: 0rem;
+  }
+  header #slide-3 #slide-3-article {
+    padding: 0.5rem;
+    font-size: 1.9vw;
+  }
+}
+@media screen and (min-height: 500px) and (max-height: 600px) {
+  header .slide {
+    width: 70vw;
+    height: 95vh;
+  }
+  header #slide-1 {
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  header #slide-1 #slide-1-images #slide-1-images-aside {
+    display: flex;
+  }
+  header #slide-1 #slide-1-images #slide-1-images-aside #slide-1-images-2 {
+    width: 25vw;
+  }
+  header #slide-1 #slide-1-images #slide-1-images-aside #slide-1-images-3 {
+    width: 25vw;
+  }
+  header #slide-1 #slide-1-article {
+    padding: 0.5rem;
+    font-size: 1.5vw;
   }
   header #slide-2 {
     flex-wrap: wrap;
@@ -432,28 +583,76 @@ header #slide-3 #slide-3-article {
     float: right;
   }
   header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-2 {
-    width: 31vw;
+    width: 14vw;
   }
   header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-3 {
-    width: 31vw;
+    width: 14vw;
   }
   header #slide-2 #slide-2-article h2 {
-    color: white;
-    font-size: 3.6vw;
+    font-size: 2.1vw;
   }
   header #slide-3 {
     flex-wrap: wrap;
     align-content: center;
   }
   header #slide-3 #slide-3-images #slide-3-images-1 {
-    max-width: 70vw;
-    min-width: 40vw;
+    max-width: 20vw;
     padding-left: 0rem;
   }
   header #slide-3 #slide-3-article {
-    color: white;
     padding: 0.5rem;
-    font-size: 2.8vw;
+    font-size: 1.5vw;
+  }
+}
+@media screen and (min-height: 900px) and (max-height: 1000px) {
+  header .slide {
+    width: 70vw;
+    height: 90vh;
+  }
+  header #slide-1 {
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  header #slide-1 #slide-1-images #slide-1-images-aside {
+    display: flex;
+  }
+  header #slide-1 #slide-1-images #slide-1-images-aside #slide-1-images-2 {
+    width: 65vw;
+  }
+  header #slide-1 #slide-1-images #slide-1-images-aside #slide-1-images-3 {
+    width: 65vw;
+  }
+  header #slide-1 #slide-1-article {
+    padding: 0.5rem;
+    font-size: 2.9vw;
+  }
+  header #slide-2 {
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  header #slide-2 #slide-2-images #slide-2-images-aside {
+    float: right;
+  }
+  header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-2 {
+    width: 34vw;
+  }
+  header #slide-2 #slide-2-images #slide-2-images-aside #slide-2-images-3 {
+    width: 34vw;
+  }
+  header #slide-2 #slide-2-article h2 {
+    font-size: 4.1vw;
+  }
+  header #slide-3 {
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  header #slide-3 #slide-3-images #slide-3-images-1 {
+    min-width: 65vw;
+    padding-left: 0rem;
+  }
+  header #slide-3 #slide-3-article {
+    padding: 0.5rem;
+    font-size: 3.8vw;
   }
 }
 
