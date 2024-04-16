@@ -146,6 +146,7 @@ nav .line.dark {
   }
   nav ul.active {
     transform: translate(0%);
+    width: 100%
   }
   nav a {
     font-size: 1.5rem;
